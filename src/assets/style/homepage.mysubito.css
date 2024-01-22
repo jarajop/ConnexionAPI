@@ -1,0 +1,101 @@
+#img_banner_home_page{
+    background-image: url("https://mysubito.net/assets/background-ba55f683.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+.title_banner_home{
+    color: #FFF;
+font-family: Roboto;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.subtitle_banner_home{
+    color: #FFF;
+font-family: Roboto;
+font-size: 39.063px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.text_banner_home{
+    color: #FFF;
+text-align: justify;
+font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 156.187%; /* 31.237px */
+}
+
+
+/*style form banner*/
+
+.input_banner_form{
+    text-decoration: none;
+    border: none;
+    border-bottom: 1px #F24873 solid;
+}
+
+.input_banner_form:focus{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: black;
+    border-bottom: 1px #F24873 solid;
+
+}
+.style_div_input{
+    border-radius: 4px 4px  4px 4px;
+background: #FFF;
+width: 100%;
+height: 15vh;
+background-size: cover;
+}
+.style_filter_banner{
+    width: 100% !important;
+border-radius: 0px 4px  4px 4px;
+background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.custom_filter {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
+    border-radius: 4px 4px  0px 0px;
+
+  }
+  .text_banner_filter{
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  input::placeholder {
+    color: #000 ;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .button_filter_banner{
+    border-radius: 4px;
+background: #F24873;
+border: 0;
+  }
+  .text_button_banner{
+    color: #FFF;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }

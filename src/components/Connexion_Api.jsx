@@ -23,25 +23,34 @@ import axios from "axios";
 function Connexion_Api() {
    const [posts, setPosts] = useState([]); // c avc les states kon parle de render 
 
-   const [toCityCode, setToCityCode] = useState('dakar');
+   //  const [statusCode, setStatusCode] = useState([]);
+  
 
-  const [fromCityCode, setFromCityCode] = useState('aeroport_international_blaise_diagne_aibd');
-
-
+   const  [params,setParams]=useState({toCityCode:'dakar', fromCityCode:'aeroport_international_blaise_diagne_aibd'});
+//
 
 
 //ici on a utilisé les promesses de js avc useeffect(ki permet d'effectuer des opérations asynchrones) pr faire la requete
 useEffect(() => {
-  client.get('/parking/car/navette_airport/customer/filter?from_city_code=' + fromCityCode + '&to_city_code=' + toCityCode)
+  client.get(`/parking/car/navette_airport/customer/filter?from_city_code=${params.fromCityCode}&to_city_code=${params.toCityCode}`)
     .then(response => {
+      if (response.status === 200) { //si tu mets statusCode le code sera 200 mai affiche une erreur
+
       setPosts(response.data); // Lorsque la requête est réussie, les données de la réponse (response.data) sont mises à jour dans le state posts à l'aide de setPosts.
-      console.log('Données de l\'API :', response.data);
+      console.log('Données de l\'API :', response.data);}
+      else {
+        // Si le code HTTP n'est pas égal à 200, affichez un message d'erreur
+        console.error('Erreur lors de la requête API. Code HTTP :', response.status);
+      }
     })
     .catch(error => { // gére les erreurs ki peuvent se produire lors de la requete
       console.error('Erreur lors de la requête API :', error);
     });
-}, [fromCityCode, toCityCode]); //cette partie c le tableau de dependances il est la pr dire a React kels variables useffect doit
-// surveiller .Si le tableau est vide useEffect sera exécuté qu'une seule fois, après le rendu initial du composant. Si le tableau contient des variables, le useEffect sera réexécuté chaque fois k la var change
+}, []); //cette partie c le tableau de dependances il est la pr dire a React kels variables useffect doit
+// surveiller .Si le tableau est vide useEffect sera exécuté qu'une seule fois, après le rendu initial du composant. 
+//Si le tableau contient des variables, le useEffect sera réexécuté chaque fois k la var change mai KAba a dit d'eviter de le mettre
+//pour eviter de faire reexecution a chak fois  
+
 
 
 // /parking/car/navette_airport/customer/filter?from_city_code=${fromCityCode}&to_city_code=${toCityCode} on pouvait aussi utiliser

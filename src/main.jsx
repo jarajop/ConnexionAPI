@@ -9,6 +9,9 @@ import About from './pages/About.jsx'
 import Form from './components/Form.jsx'
 import Footer from './components/Footer.jsx'
 import Connexion_Api from './components/Connexion_Api.jsx'
+import Private_driver from './components/Private_driver.jsx'
+import APIHelpers from '../src/core/APIHelpers.jsx' 
+import HomePage from './components/HomePage.jsx'
 
 const router = createBrowserRouter(
   [
@@ -18,7 +21,7 @@ const router = createBrowserRouter(
       children: [
         {
           path: "/",
-          element: <Home />
+          element: <HomePage/>
         },
         {
           path: "/about",
@@ -39,6 +42,14 @@ const router = createBrowserRouter(
         {
           path: "/axios",
           element: <Connexion_Api/>
+        },
+        {
+          path: "/axios2",
+          element: <Private_driver/>
+        },
+        {
+          path: "/axios3",
+          element: <APIHelpers/>
         },
       ]
     }
